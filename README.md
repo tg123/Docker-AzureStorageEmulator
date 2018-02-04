@@ -1,6 +1,8 @@
 # Azure Storage Emulator Docker Image
 <https://docs.microsoft.com/en-us/azure/storage/storage-use-emulator>
 
+![Docker Build](https://farmer1992.visualstudio.com/_apis/public/build/definitions/3686302e-40e0-495b-a6f8-f2926767661b/9/badge)
+
 ## Usage 
 
 ```

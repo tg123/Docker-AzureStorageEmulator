@@ -6,13 +6,12 @@
 ## Usage 
 
 ```
-docker run farmer1992/azure-storage-emulator
+docker run -p 10000:10000 -p 10001:10001 -p 10002:10002 farmer1992/azure-storage-emulator
 ```
 
-_NOTE_: you should use container ip to access the service or from different host when use port mapping due to WinNAT limitation <https://blogs.technet.microsoft.com/virtualization/2016/05/25/windows-nat-winnat-capabilities-and-limitations/>
-
-
 ### You may want C# code to generate connection string
+
+_Note:_ No need to modify the secret, it was hardcoded in container.
 
 ```
 static string GenerateConnStr(string ip = "127.0.0.1", int blobport = 10000, int queueport = 10001, int tableport = 10002)
@@ -24,7 +23,7 @@ static string GenerateConnStr(string ip = "127.0.0.1", int blobport = 10000, int
 Connect to emulator
 
 ```
-var cloudStorageAccount = CloudStorageAccount.Parse(GenerateConnStr("container ip"));
+var cloudStorageAccount = CloudStorageAccount.Parse(GenerateConnStr());
 
 // ...
 ```

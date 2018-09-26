@@ -7,7 +7,7 @@ RUN powershell -NoProfile -Command \
 
 RUN msiexec /i SqlLocalDB.msi /qn /norestart IACCEPTSQLLOCALDBLICENSETERMS=YES
 
-ENV AZ_STOR_EMU_URL http://download.microsoft.com/download/1/F/C/1FCF23A3-BBD8-4F50-B5C2-E382F14A2AAD/MicrosoftAzureStorageEmulator.msi
+ENV AZ_STOR_EMU_URL https://download.visualstudio.microsoft.com/download/pr/12905117/3bd7826884edd5468c8819a04e871dfe/MicrosoftAzureStorageEmulator.msi
 
 RUN powershell -NoProfile -Command \
         Invoke-WebRequest %AZ_STOR_EMU_URL% -OutFile MicrosoftAzureStorageEmulator.msi;

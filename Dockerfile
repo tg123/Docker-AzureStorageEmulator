@@ -1,4 +1,4 @@
-FROM microsoft/windowsservercore:latest
+FROM mcr.microsoft.com/windows/servercore:ltsc2016
 MAINTAINER Boshi Lian <farmer1992@gmail.com>
 
 ENV LOCAL_DB_URL https://download.microsoft.com/download/9/0/7/907AD35F-9F9C-43A5-9789-52470555DB90/ENU/SqlLocalDB.msi
@@ -7,7 +7,7 @@ RUN powershell -NoProfile -Command \
 
 RUN msiexec /i SqlLocalDB.msi /qn /norestart IACCEPTSQLLOCALDBLICENSETERMS=YES
 
-ENV AZ_STOR_EMU_URL https://download.visualstudio.microsoft.com/download/pr/12905117/3bd7826884edd5468c8819a04e871dfe/MicrosoftAzureStorageEmulator.msi
+ENV AZ_STOR_EMU_URL https://download.visualstudio.microsoft.com/download/pr/e9476781-1f65-40e4-b7fd-e6b49840c7de/7028682de076b2dbc1aa5f1e02ec420a/microsoftazurestorageemulator.msi
 
 RUN powershell -NoProfile -Command \
         Invoke-WebRequest %AZ_STOR_EMU_URL% -OutFile MicrosoftAzureStorageEmulator.msi;

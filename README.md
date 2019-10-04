@@ -3,10 +3,15 @@
 
 [![Build status](https://dev.azure.com/farmer1992/opensources/_apis/build/status/DockerBuild-AzureStorageEmulator)](https://dev.azure.com/farmer1992/opensources/_build/latest?definitionId=9)
 
+## Microsoft Docker hub verison
+
+please use `farmer1992/azure-storage-emulator` instead of `microsoft/azure-storage-emulator`
+MS repo are moving to a new project <https://github.com/Azure/Azurite>. thus, the old .net version was freezed.
+
 ## Usage 
 
 ```
-docker run -p 10000:10000 -p 10001:10001 -p 10002:10002 microsoft/azure-storage-emulator
+docker run -p 10000:10000 -p 10001:10001 -p 10002:10002 farmer1992/azure-storage-emulator
 ```
 
 ### You may want C# code to generate connection string

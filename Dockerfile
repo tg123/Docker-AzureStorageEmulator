@@ -57,6 +57,6 @@ ADD nginx.conf 'conf\nginx.conf'
 EXPOSE 10000 10001 10002
 
 ENTRYPOINT C:\entrypoint.cmd
-CMD ["nginx", "-g \"daemon off;\""]
+CMD nginx.exe
 
 
